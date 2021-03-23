@@ -1,5 +1,115 @@
 <?php
 
+include 'db_connect.php';
+include 'path.php';
+
+//================
+ob_start();
+					
+					if(isset($_POST['submit']))
+					{
+						$fname = $_POST['fname'];
+						$lname = $_POST['lname'];
+						$email = $_POST['email'];
+						$password = $_POST['password'];
+						$cpassword = $_POST['cpassword'];
+						$date = $_POST['date'];
+						$address = $_POST['address'];
+						$phone_no = $_POST['phone_no'];
+						
+					if($fname && $lname && $email && $password &&$cpassword &&$date &&$address && $phone_no)
+					{	
+						if($password == $cpassword )
+						{
+							
+							$query = "select*from users where email_id = '$email'";
+							$query_check = mysqli_query($con,$query);
+							
+							if($query_check)
+							{
+							   if(mysqli_num_rows($query_check) > 0)
+							   {
+								   echo("
+								   
+								   <script>
+								   alert ('Email ALready Used!');
+								   
+								 
+								   window.location.href= '$login_path';
+								   
+								   </script>
+								   
+								   ");
+							   }else
+							   {
+								  $insertion = "insert into users values('$email','$password','$fname','$lname','$phone_no','$date','$address')";
+								  
+								  $run = mysqli_query($con,$insertion);
+								  
+								  if($run)
+								  {
+									  echo"
+								   
+								   <script>
+								   alert ('You are successfully registered!!');
+								   window.location.href= '$login_path';
+								   
+								   </script>
+								   ";
+									  
+									  
+								  }
+								  else
+								  {
+								   echo"
+								   
+								   <script>
+								   alert ('Database Error!');
+								   window.location.href='$reg_path';
+								   </script>
+								   window.location.href='$reg_path';
+								   ";
+									  
+								  }
+								  
+								  
+							   }
+							}
+							
+							else
+							{
+								
+								
+							}
+			
+						}
+						else
+						{
+							echo"
+								   
+								   <script>
+								   alert ('Password unmatched!');
+								   </script>
+								   
+								
+								   ";
+						}
+					}
+					else
+					{
+						echo"
+								   
+								   <script>
+								   alert ('Empty Field!');
+								   </script>
+								   
+								
+								   ";
+					}
+					
+						
+					}
+				    ob_end_flush();
 
 
 ?>
