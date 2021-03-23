@@ -1,0 +1,59 @@
+create database reviewnow;
+use reviewnow;
+
+CREATE TABLE  users  (
+   email_id  varchar(200) NOT NULL,
+   password  varchar(200) NOT NULL,
+   first_name  varchar(200) NOT NULL,
+   last_name  varchar(200) NOT NULL,
+   phone_no  bigint(20) NOT NULL,
+   date_of_birth  date NOT NULL,
+   address  varchar(200) NOT NULL,
+   PRIMARY KEY(email_id)
+);
+
+
+
+
+CREATE TABLE book (
+  review_id int(11) NOT NULL,
+  book_name varchar(1000) NOT NULL,
+  book_category varchar(1000) NOT NULL,
+  PRIMARY KEY(review_id)
+);
+
+
+
+
+CREATE TABLE food (
+  review_id int(11) NOT NULL,
+  food_name varchar(1000) NOT NULL,
+  food_category varchar(1000) NOT NULL,
+  PRIMARY KEY(review_id)
+);
+
+
+
+
+
+CREATE TABLE movie (
+  review_id int(11) NOT NULL,
+  movie_name varchar(1000) NOT NULL,
+  movie_category varchar(1000) NOT NULL,
+  PRIMARY KEY(review_id)
+) ;
+
+
+CREATE TABLE review (
+  email_id  varchar(200),
+  review_id INT(10) AUTO_INCREMENT,
+  rating int(11) NOT NULL,
+  price int(11) NOT NULL,
+  description varchar(10000) NOT NULL,
+  location varchar(100) NOT NULL,
+  detail_location varchar(100) DEFAULT NULL,
+  images varchar(100) DEFAULT NULL,
+  PRIMARY KEY(review_id)
+);
+
+
