@@ -1,5 +1,90 @@
 <?php
 
+session_start();
+
+include 'C:\xampp\htdocs\reviewtest\db_connect.php';
+include 'C:\xampp\htdocs\reviewtest\path.php';
+
+ob_start();
+					
+					if(isset($_POST['login']))
+					{
+						
+						$email = $_POST['email'];
+						$password = $_POST['pass'];
+						
+						
+					if($email && $password)
+					{	
+						
+							
+							$query = "select*from users where email_id = '$email'";
+							$query_check = mysqli_query($con,$query);
+							
+							if($query_check)
+							{
+							   if(mysqli_num_rows($query_check) > 0)
+							   {
+								   $query1 = "select*from users where email_id = '$email' and password = '$password' ";
+							       $query_check1 = mysqli_query($con,$query1);
+								   
+								   if(mysqli_num_rows($query_check1) > 0)
+									{
+										 $_SESSION["email"] = $email;
+										 
+										 echo"
+								   
+								   <script>
+								   alert ('Successfully Login');
+								  
+								   window.location.href='$home_path';
+								   </script>
+								   
+								   ";
+									}
+									else
+									{
+										 echo"
+								   
+								   <script>
+								   alert ('Wrong Password!');
+								  
+								   window.location.href='$login_path';
+								   </script>
+								   
+								   ";
+								   
+									}
+								   
+				   }
+							   else
+							   {
+								 echo"
+								   
+								   <script>
+								   alert ('Invalid Mail. Create an account.');
+								  
+								   window.location.href='$reg_path';
+								   </script>
+								   
+								   ";
+								  
+								  
+							   }
+							}
+							
+							else
+							{
+								  
+								
+							}
+
+					}
+					
+					
+	
+					}
+				    ob_end_flush();
 
 
 ?>
