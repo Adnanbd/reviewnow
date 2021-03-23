@@ -80,7 +80,17 @@ ob_start();
 							}
 
 					}
-					
+					else
+					{
+						echo"
+								   
+								   <script>
+								   alert ('Empty Field!');
+								   </script>
+								   
+								
+								   ";
+					}
 					
 	
 					}
