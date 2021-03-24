@@ -314,7 +314,170 @@
                                 </fieldset>
                             </form>
                         </div>
-                        
+                        <div class="tab-pane" id="tab2">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <fieldset class="form-control formStyle">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="input"><strong>Book Name</strong></label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input class="form-control" type="text" id="input" name="bookName" placeholder="Name of Book..." required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="select"><strong>Book Category</strong></label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="bookCategory" required>
+                                                <option class="form-control" value="">Choose Category</option>
+                                                <option value="Action and adventure">Action and adventure</option>
+                                                <option value="Childrens">Children's</option>
+                                                <option value="Comic">Comic</option>
+                                                <option value="Crime">Crime</option>
+                                                <option value="Drama">Drama</option>
+                                                <option value="Fairytale">Fairytale</option>
+                                                <option value="Fantasy">Fantasy</option>
+                                                <option value="Historical">Historical</option>
+                                                <option value="Horror">Horror</option>
+                                                <option value="Islamic">Islamic</option>
+                                                <option value="Mystery">Mystery</option>
+                                                <option value="Paranormal">Paranormal </option>
+                                                <option value="Poetry">Poetry</option>
+                                                <option value="Romance">Romance</option>
+                                                <option value="Science fiction">Science fiction</option>
+                                                <option value="Short story">Short story</option>
+                                                <option value="Suspense">Suspense</option>
+                                                <option value="Thriller">Thriller</option>
+                                                <option value="Travel">Travel</option>
+                                                <option value="Others">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="select"><strong>Location</strong></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <select class="form-control" id="select" name="bookLocation" required>
+                                                <option class="form-control" value="">Select Area</option>
+                                                <optgroup label="Dhaka">
+                                                    <option value="Banani">Banani</option>
+                                                    <option value="Banglamotor">Banglamotor</option>
+                                                    <option value="Bangshal">Bangshal</option>
+                                                    <option value="Baridhara">Baridhara</option>
+                                                    <option value="Badda">Badda</option>
+                                                    <option value="Basabo">Basabo</option>
+                                                    <option value="Basundhara">Basundhara</option>
+                                                    <option value="Cantonment">Cantonment</option>
+                                                    <option value="Chaukbazar">Chaukbazar</option>
+                                                    <option value="Demra">Demra</option>
+                                                    <option value="Dhamrai">Dhamrai</option>
+                                                    <option value="Dhanmondi">Dhanmondi</option>
+                                                    <option value="Dohar">Dohar</option>
+                                                    <option value="Elephant Road">Elephant Road</option>
+                                                    <option value="Farmgate">Farmgate</option>
+                                                    <option value="Gulshan">Gulshan</option>
+                                                    <option value="Hazaribagh">Hazaribagh</option>
+                                                    <option value="Jatrabari">Jatrabari</option>
+                                                    <option value="Kafrul">Kafrul</option>
+                                                    <option value="Kamrangirchar">Kamrangirchar</option>
+                                                    <option value="Keraniganj">Keraniganj</option>
+                                                    <option value="Khilgaon">Khilgaon</option>
+                                                    <option value="Khilkhet">Khilkhet</option>
+                                                    <option value="Kotwali">Kotwali</option>
+                                                    <option value="Lalbag">Lalbag</option>
+                                                    <option value="Malibag">Malibag</option>
+                                                    <option value="Mirpur">Mirpur</option>
+                                                    <option value="Mogbazar">Mogbazar</option>
+                                                    <option value="Mohakhali">Mohakhali</option>
+                                                    <option value="Motijheel">Motijheel</option>
+                                                    <option value="Nawabganj">Nawabganj</option>
+                                                    <option value="New Market">New Market</option>
+                                                    <option value="Paltan">Paltan</option>
+                                                    <option value="Purbachal">Purbachal</option>
+                                                    <option value="Ramna">Ramna</option>
+                                                    <option value="Rampura">Rampura</option>
+                                                    <option value="Savar">Savar</option>
+                                                    <option value="Sutrapur">Sutrapur</option>
+                                                    <option value="Tejgaon">Tejgaon</option>
+                                                    <option value="Tongi">Tongi</option>
+                                                    <option value="Uttara">Uttara</option>
+                                                    <option value="Wari">Wari</option>
+                                                </optgroup>
+                                                <optgroup label="Chittagong">
+                                                    <option value="Chittagong">Chittagong</option>
+                                                </optgroup>
+                                                <optgroup label="Rangpur">
+                                                    <option value="Rangpur">Rangpur</option>
+                                                </optgroup>
+                                                <optgroup label="Sylhet">
+                                                    <option value="Sylhet">Sylhet</option>
+                                                </optgroup>
+                                                <optgroup label="Barishal">
+                                                    <option value="Barishal">Barishal</option>
+                                                </optgroup>
+                                                <optgroup label="Rajshahi">
+                                                    <option value="Rajshahi">Rajshahi</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" id="input" name="bookDetailLocation" placeholder="Shop Name, Road No, House No etc" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="textarea"><strong>Review Description</strong></label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" id="textarea" rows="4" name="bookDescription" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="imagechoose"><strong>Select Images</strong></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="file" class="form-control" name="bookimage">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="input"><strong>Book Price</strong></label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input class="form-control" type="number" id="input" name="bookPrice" placeholder="Price of Book item" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="input"><strong>Rating</strong></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-control" id="select" name="bookRating" required>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button class="btn btn-outline-success btn-block" name="bookInsert" type="submit"><strong>Submit</strong></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
                        
         <div class="row conbac1">
             <div class="col-md-12 ">
