@@ -129,7 +129,197 @@
             </nav>
 
    <!-- navbar ends -->
-    
+    <div class="container conbac">
+        <!--header row-->
+        <div class="row conbac1">
+            <div class="col-md-12 ">
+            </div>
+        </div>
+        <div class="row">
+            <!--main body-->
+            <div class="col-md-12">
+                <center>
+                    <h2 class="heading">WRITE YOUR REVIEW HERE</h2>
+                </center>
+                <div class="col-sm-12 product-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active tabStyle"><a href="#tab1" data-toggle="tab">Food</a></li>
+                        <li class="tabStyle"><a href="#tab2" data-toggle="tab">Book</a></li>
+                        <li class="tabStyle"><a href="#tab3" data-toggle="tab">Movie</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <fieldset class="form-control formStyle">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="input"><strong>Food Name</strong></label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input class="form-control" type="text" id="input" name="foodName" value="" placeholder="Name of Food item..." required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="select"><strong>Food Category</strong></label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="foodCategory" required>
+                                                <option class="form-control" value="">Choose Category</option>
+                                                <option value="Biriyani">Biriyani</option>
+                                                <option value="Burger">Burger</option>
+                                                <option value="Buffet">Buffet</option>
+                                                <option value="Coffee">Coffee</option>
+                                                <option value="Chicken">Chicken</option>
+                                                <option value="Doi">Doi</option>
+                                                <option value="Fried Rice">Fried Rice</option>
+                                                <option value="French fries">French fries</option>
+                                                <option value="Fuchka/Velpuri">Fuchka/Velpuri</option>
+                                                <option value="Ice Cream">Ice Cream</option>
+                                                <option value="Juice">Juice</option>
+                                                <option value="Kala Vuna">Kala Vuna</option>
+                                                <option value="Kacchi">Kacchi</option>
+                                                <option value="Mishti">Mishti</option>
+                                                <option value="Noodles">Noodles</option>
+                                                <option value="Pizza">Pizza</option>
+                                                <option value="Pasta">Pasta</option>
+                                                <option value="Plater">Plater</option>
+                                                <option value="Rice">Rice</option>
+                                                <option value="Steak">Steak</option>
+                                                <option value="Tea">Tea</option>
+                                                <option value="Others">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="select"><strong>Location</strong></label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <select class="form-control" id="select" name="foodLocation" required>
+                                                <option class="form-control" value="">Select Area</option>
+                                                <optgroup label="Dhaka">
+                                                    <option value="Banani">Banani</option>
+                                                    <option value="Banglamotor">Banglamotor</option>
+                                                    <option value="Bangshal">Bangshal</option>
+                                                    <option value="Baridhara">Baridhara</option>
+                                                    <option value="Badda">Badda</option>
+                                                    <option value="Basabo">Basabo</option>
+                                                    <option value="Basundhara">Basundhara</option>
+                                                    <option value="Cantonment">Cantonment</option>
+                                                    <option value="Chaukbazar">Chaukbazar</option>
+                                                    <option value="Demra">Demra</option>
+                                                    <option value="Dhamrai">Dhamrai</option>
+                                                    <option value="Dhanmondi">Dhanmondi</option>
+                                                    <option value="Dohar">Dohar</option>
+                                                    <option value="Elephant Road">Elephant Road</option>
+                                                    <option value="Farmgate">Farmgate</option>
+                                                    <option value="Gulshan">Gulshan</option>
+                                                    <option value="Hazaribagh">Hazaribagh</option>
+                                                    <option value="Jatrabari">Jatrabari</option>
+                                                    <option value="Kafrul">Kafrul</option>
+                                                    <option value="Kamrangirchar">Kamrangirchar</option>
+                                                    <option value="Keraniganj">Keraniganj</option>
+                                                    <option value="Khilgaon">Khilgaon</option>
+                                                    <option value="Khilkhet">Khilkhet</option>
+                                                    <option value="Kotwali">Kotwali</option>
+                                                    <option value="Lalbag">Lalbag</option>
+                                                    <option value="Malibag">Malibag</option>
+                                                    <option value="Mirpur">Mirpur</option>
+                                                    <option value="Mogbazar">Mogbazar</option>
+                                                    <option value="Mohakhali">Mohakhali</option>
+                                                    <option value="Motijheel">Motijheel</option>
+                                                    <option value="Nawabganj">Nawabganj</option>
+                                                    <option value="New Market">New Market</option>
+                                                    <option value="Paltan">Paltan</option>
+                                                    <option value="Purbachal">Purbachal</option>
+                                                    <option value="Ramna">Ramna</option>
+                                                    <option value="Rampura">Rampura</option>
+                                                    <option value="Savar">Savar</option>
+                                                    <option value="Sutrapur">Sutrapur</option>
+                                                    <option value="Tejgaon">Tejgaon</option>
+                                                    <option value="Tongi">Tongi</option>
+                                                    <option value="Uttara">Uttara</option>
+                                                    <option value="Wari">Wari</option>
+                                                </optgroup>
+                                                <optgroup label="Chittagong">
+                                                    <option value="Chittagong">Chittagong</option>
+                                                </optgroup>
+                                                <optgroup label="Rangpur">
+                                                    <option value="Rangpur">Rangpur</option>
+                                                </optgroup>
+                                                <optgroup label="Sylhet">
+                                                    <option value="Sylhet">Sylhet</option>
+                                                </optgroup>
+                                                <optgroup label="Barishal">
+                                                    <option value="Barishal">Barishal</option>
+                                                </optgroup>
+                                                <optgroup label="Rajshahi">
+                                                    <option value="Rajshahi">Rajshahi</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control" type="text" id="input" name="foodDetailLocation" placeholder="Shop Name, Road No, House No etc" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="textarea"><strong>Review Description</strong></label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" id="textarea" rows="4" name="foodDescription" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="imagechoose"><strong>Select Images</strong></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="file" class="form-control" name="image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="input"><strong>Food Price</strong></label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input class="form-control" type="number" id="input" name="foodPrice" placeholder="Price of Food item" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label class="form-group" for="input"><strong>Rating</strong></label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-control" id="select" name="foodRating" required>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button class="btn btn-outline-success btn-block" name="foodInsert" type="submit"><strong>Submit</strong></button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        
+                       
+        <div class="row conbac1">
+            <div class="col-md-12 ">
+            </div>
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
