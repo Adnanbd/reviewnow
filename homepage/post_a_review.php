@@ -1,5 +1,70 @@
 <?php
-
+session_start();
+include 'C:\xampp\htdocs\reviewtest\db_connect.php';
+include 'C:\xampp\htdocs\reviewtest\path.php';
+$user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESSION["email"]."' ");
+ 
+ $row_one = mysqli_fetch_array($user_email);
+if (isset($_POST['foodInsert'])) {
+    //getting form input data
+    $food_name = $_POST['foodName'];
+    $food_category = $_POST['foodCategory'];
+    $location = $_POST['foodLocation'];
+    $detail_location = $_POST['foodDetailLocation'];
+    $description = $_POST['foodDescription'];
+    $price = $_POST['foodPrice'];
+    $rating = $_POST['foodRating'];
+    $msg = "";
+    $image = $_FILES['image']['name'];
+    $target = "review_img/".basename($image);
+    $sql = "INSERT INTO `review`(`review_id`, `rating`, `price`, `description`, `location`,`detail_location`,`images`,`email_id`) VALUES ('','$rating','$price','$description','$location','$detail_location','$image','".$_SESSION['email']."')";
+    mysqli_query($con, $sql);
+    $idmatch = mysqli_query($con, "SELECT * FROM review ORDER BY review_id DESC LIMIT 1");
+    $row = mysqli_fetch_array($idmatch);
+    $value = $row['review_id'];
+    $query2 = "INSERT INTO `food`(`review_id`, `food_name`, `food_category`) VALUES ('$value','$food_name','$food_category')";
+    $query2_run = mysqli_query($con, $query2);
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+    } else {
+        $msg = "Failed to upload image";
+    }
+    if ($query2_run) {
+        echo ' <script type="text/javascript"> alert("Thanks For Posting a Review!") </script> ';
+    } else {
+        echo ' <script type="text/javascript"> alert("Review Not Posted!") </script> ';
+    }
+}
+if (isset($_POST['bookInsert'])) {
+    //getting form input data
+    $book_name = $_POST['bookName'];
+    $book_category = $_POST['bookCategory'];
+    $booklocation = $_POST['bookLocation'];
+    $bookdetail_location = $_POST['bookDetailLocation'];
+    $bookdescription = $_POST['bookDescription'];
+    $bookprice = $_POST['bookPrice'];
+    $bookrating = $_POST['bookRating'];
+    $msg = "";
+    $bookimage = $_FILES['bookimage']['name'];
+    $booktarget = "review_img/".basename($bookimage);
+    $booksql = "INSERT INTO `review`(`review_id`, `rating`, `price`, `description`, `location`,`detail_location`,`images`,`email_id`) VALUES ('','$bookrating','$bookprice','$bookdescription','$booklocation','$bookdetail_location','$bookimage','".$_SESSION['email']."')";
+    mysqli_query($con, $booksql);
+    $bookidmatch = mysqli_query($con, "SELECT * FROM review ORDER BY review_id DESC LIMIT 1");
+    $row = mysqli_fetch_array($bookidmatch);
+    $value = $row['review_id'];
+    $query2 = "INSERT INTO `book`(`review_id`, `book_name`, `book_category`) VALUES ('$value','$book_name','$book_category')";
+    $query2_run = mysqli_query($con, $query2);
+    if (move_uploaded_file($_FILES['bookimage']['tmp_name'], $booktarget)) {
+        $msg = "Image uploaded successfully";
+    } else {
+        $msg = "Failed to upload image";
+    }
+    if ($query2_run) {
+        echo ' <script type="text/javascript"> alert("Thanks For Posting a Review!") </script> ';
+    } else {
+        echo ' <script type="text/javascript"> alert("Review Not Posted!") </script> ';
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
