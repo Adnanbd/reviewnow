@@ -95,7 +95,26 @@ $row_one = mysqli_fetch_array($user_email);
    <!-- navbar ends -->
   
 <!-- design -->
+<div id="content">
+  <?php
+  echo "<div id='profile_info_div'>";
+  echo "<img src='images/user.jpg'>";
+  echo "<div id='proinfo'>";
+  echo "<h2><strong>".$row_one["first_name"]." ".$row_one["last_name"]."</strong></h2>";
+  echo "<p>"."<b>Address: </b>".$row_one["address"]."</p>";
+  echo "<p>"."<b>Date-of-Birth: </b>".$row_one["date_of_birth"]."</p>";
+  echo "<p>"."<b>Phone: </b>".$row_one["phone_no"]."</p>";
+  echo "</div>";
+  echo "</div>";
+  echo "<center><h1><b>My Post</b></h1></center>";
+  
+   
+  
+	  
 
+		
+  ?>
+  	</div>
 	 
 <!-- design -->				
 
