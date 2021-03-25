@@ -109,7 +109,106 @@ $row_one = mysqli_fetch_array($user_email);
   echo "<center><h1><b>My Post</b></h1></center>";
   
    
+  while ($row = mysqli_fetch_array($result)) {
+		   
+		   
+	  
+	echo "<div id='img_div'>";
+		echo "<img src='review_img/".$row['images']."' >";
+	  echo "<div id='reviewContent'>";
+	  
   
+	   
+	   
+	   
+	   $foodsql = mysqli_query($con, "SELECT * FROM food where review_id ='".$row['review_id']."'");
+	   
+		  if(mysqli_num_rows($foodsql) < 1)
+								  {
+									  $moviesql = mysqli_query($con, "SELECT * FROM movie where review_id = '".$row['review_id']."' ");
+									  
+									   if(mysqli_num_rows($moviesql) < 1)
+										  {
+											  $booksql = mysqli_query($con, "SELECT * FROM book where review_id = '".$row['review_id']."' ");
+											  
+											  if(mysqli_num_rows($booksql) < 1)
+													  {
+														  
+													  }
+													  else
+													  {
+														  $res = mysqli_fetch_array($booksql);
+														  echo "<h2><b>".$res['book_name']."</b></h2>";
+														  
+														  echo "<p>"."<b>Rating: </b>".$row['rating']." out of 5"."</p>";
+														  echo "<p>"."<b>Price: </b>".$row['price']."<b> Taka</b>"."</p>";
+														  echo "<p>"."<b>Location: </b>".$row['detail_location']."</p>";
+														  echo "<p>"."<b>Description: </b>".$row['description']."</p>";
+														echo "</div>";
+														  
+													  }
+											  
+											  
+											  
+										  }
+										  else
+										  {
+											  $res = mysqli_fetch_array($moviesql);
+											  echo "<h2><b>".$res['movie_name']."</b></h2>";
+											  echo "<p>"."<b>Rating: </b>".$row['rating']." out of 5"."</p>";
+														  
+														  
+														  echo "<p>"."<b>Description: </b>".$row['description']."</p>";
+														echo "</div>";
+											  
+										  }
+								  }
+								  else
+								  {
+									  $res = mysqli_fetch_array($foodsql);
+									  echo "<h2><b>".$res['food_name']."</b></h2>";
+									  
+									  echo "<p>"."<b>Rating: </b>".$row['rating']." out of 5"."</p>";
+									  echo "<p>"."<b>Price: </b>".$row['price']."<b> Taka</b>"."</p>";
+									  echo "<p>"."<b>Location: </b>".$row['detail_location']."</p>";
+									  echo "<p>"."<b>Description: </b>".$row['description']."</p>";
+									  
+									  
+									  
+		  
+									  
+									echo "</div>";
+									
+									
+									 
+									
+								  }
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	
+		echo "</div>";
+	  
+  }
+  
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+	  
 	  
 
 		
