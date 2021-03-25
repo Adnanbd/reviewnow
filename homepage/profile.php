@@ -2,7 +2,28 @@
 session_start();
 include 'C:\xampp\htdocs\reviewtest\db_connect.php';
 include 'C:\xampp\htdocs\reviewtest\path.php';
+$user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESSION["email"]."' ");
+ 
+ $row_one = mysqli_fetch_array($user_email);
 
+$tempid = $_GET["id"];
+if(!empty($tempid)){
+	mysqli_query( $con, "DELETE FROM review WHERE review_id=$tempid" )
+
+		or die("Can not execute query");
+	mysqli_query( $con, "DELETE FROM food WHERE review_id=$tempid" )
+
+		or die("Can not execute query");
+	mysqli_query( $con, "DELETE FROM book WHERE review_id=$tempid" )
+
+		or die("Can not execute query");
+	mysqli_query( $con, "DELETE FROM movie WHERE review_id=$tempid" )
+
+		or die("Can not execute query");
+	echo"<script>
+	alert ('Post Deleted');
+	</script>";
+}
 
 $result = mysqli_query($con, "SELECT * FROM review where email_id = '".$_SESSION["email"]."' ORDER BY review_id DESC");
  
