@@ -65,6 +65,33 @@ if (isset($_POST['bookInsert'])) {
         echo ' <script type="text/javascript"> alert("Review Not Posted!") </script> ';
     }
 }
+if (isset($_POST['movieInsert'])) {
+    //getting form input data
+    $movie_name = $_POST['movieName'];
+    $movie_category = $_POST['movieCategory'];
+    $moviedescription = $_POST['movieDescription'];
+    $movierating = $_POST['movieRating'];
+    $movieimage = $_FILES['movieimage']['name'];
+    $movietarget = "review_img/".basename($movieimage);
+    $moviesql = "INSERT INTO `review`(`review_id`, `rating`, `description`,`images`,`email_id`) VALUES ('','$movierating','$moviedescription','$movieimage','".$_SESSION['email']."')";
+    // execute query
+    mysqli_query($con, $moviesql);
+
+	
+    $movieidmatch = mysqli_query($con, "SELECT * FROM review ORDER BY review_id DESC LIMIT 1");
+    $row = mysqli_fetch_array($movieidmatch);
+    $value = $row['review_id'];
+    $query2 = "INSERT INTO `movie`(`review_id`, `movie_name`, `movie_category`) VALUES ('$value','$movie_name','$movie_category')";
+    $query2_run = mysqli_query($con, $query2);
+    if (move_uploaded_file($_FILES['movieimage']['tmp_name'], $movietarget)) {
+    } else {
+    }
+    if ($query2_run) {
+        echo ' <script type="text/javascript"> alert("Thanks For Posting a Review!") </script> ';
+    } else {
+        echo ' <script type="text/javascript"> alert("Review Not Posted!") </script> ';
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
