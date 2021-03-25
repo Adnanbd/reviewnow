@@ -28,8 +28,122 @@ $row_one = mysqli_fetch_array($user_email);
     <title>Review IT</title>
     
     <style>
-	
-	
+	body{
+		background: #466368;
+  		background: -webkit-linear-gradient(#648880, #293f50);
+  		background:    -moz-linear-gradient(#648880, #293f50);
+  		background:         linear-gradient(#648880, #293f50);
+
+		
+	}
+        
+       #content{
+		  
+   	width: 70%;
+   	margin: 100px auto;
+   	border: 1px solid #cbcbcb;
+	background-color:#fff;
+	border-radius:10px;
+   }
+   form div{
+   	margin-top: 5px;
+   }
+   #img_div{
+   	width: auto;
+   	padding: 5px;
+   	margin: 20px 20px 20px 20px;
+   	border: 1px solid #cbcbcb;
+	border-radius:10px;
+   }
+   #profile_info_div{
+   	width: auto;
+   	padding: 5px;
+   	margin: 20px 20px 20px 20px;
+   	border: 1px solid #cbcbcb;
+	border-radius:10px;
+   }
+   #profile_info_div:after{
+   	content: "";
+   	display: block;
+   	clear: both;
+   }
+   #img_div:after{
+   	content: "";
+   	display: block;
+   	clear: both;
+   }
+   img{
+   	float: left;
+   	margin: 5px;
+   	width: 40%;
+   	height: auto;
+	padding: 30px;
+   }
+   
+   #reviewContent{
+	   float: right;
+   	margin: 5px;
+   	width: 50%;
+   	height: auto;
+	padding: 30px;
+	   
+   };
+   #proinfo{
+	float: right;
+   	margin: 5px;
+   	width: 50%;
+   	height: auto;
+	padding: 30px;
+	   
+   };
+ 
+   
+   
+	.conbac{
+			background-color:#fff;
+			border-radius:10px;
+				margin: 80px auto;
+		}
+		
+		.conbac1{
+			background-color:#fff;
+			height: 860px;
+			border-radius:10px;
+
+		}
+		
+		.conbac2{
+			background-color:#E8E8FF;
+			border: 3px solid #0F2D21;
+			border-radius:10px;
+			width: 70%;
+			margin-left: 170px;
+			
+
+		}
+		
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		td{
+			
+			padding: 25px;
+		}
+		
+		
+    
+   
+   .welcome{
+	   color: #fff;
+	   margin-top : 10px;
+	   margin-left:60px;
+	   
+   }
+   /* Style buttons */
+
     </style>
     
   </head>
