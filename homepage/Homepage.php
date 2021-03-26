@@ -101,6 +101,18 @@ include 'C:\xampp\htdocs\reviewtest\path.php';
   
 <!-- youtube -->
 	<div id="content">
+	 <?php
+  
+   
+  
+	  
+	   while ($row = mysqli_fetch_array($result)) {
+		   
+		   
+	  
+	  echo "<div id='img_div'>";
+      	echo "<img src='review_img/".$row['images']."' >";
+		echo "<div id='reviewContent'>";
 	
 									$foodsql = mysqli_query($con, "SELECT * FROM food where review_id ='".$row['review_id']."'");
 		 
@@ -164,6 +176,23 @@ include 'C:\xampp\htdocs\reviewtest\path.php';
 									   
 									  
 									}
+	echo "</div>";
+		
+    }
+	
+  
+
+
+ 
+  
+	
+	
+	
+	
+	
+	
+		
+  ?>
   
   	</div>
 		
