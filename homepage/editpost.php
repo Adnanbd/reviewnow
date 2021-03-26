@@ -8,6 +8,43 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '" . $_SE
 $row_one = mysqli_fetch_array($user_email);
 
 
+if (isset($_POST['foodInsert'])) {
+    //getting form input data
+    $food_name = $_POST['foodName'];
+    $food_category = $_POST['foodCategory'];
+    $location = $_POST['foodLocation'];
+    $detail_location = $_POST['foodDetailLocation'];
+    $description = $_POST['foodDescription'];
+    $price = $_POST['foodPrice'];
+    $rating = $_POST['foodRating'];
+    $msg = "";
+    $image = $_FILES['image']['name'];
+    $target = "review_img/" . basename($image);
+    //UPDATE MyGuests SET lastname='Doe' WHERE id=2
+    if ($_FILES['image']['size'] == 0) {
+
+        $sql = "UPDATE `review` SET `rating` = '$rating', `price` = '$price', `description`='$description', `location` = '$location',`detail_location` = '$detail_location' WHERE review_id = $tempid";
+    } else {
+        $sql = "UPDATE `review` SET `rating` = '$rating', `price` = '$price', `description`='$description', `location` = '$location',`detail_location` = '$detail_location',`images`='$image' WHERE review_id = $tempid";
+    }
+
+    mysqli_query($con, $sql);
+    $query2 = "UPDATE `food` SET `food_name` = '$food_name', `food_category` = '$food_category' WHERE review_id = $tempid ";
+    $query2_run = mysqli_query($con, $query2);
+    if ($_FILES['image']['size'] == 0) {
+    } else {
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+            $msg = "Image uploaded successfully";
+        } else {
+            $msg = "Failed to upload image";
+        }
+    }
+    if ($query2_run) {
+        echo ' <script type="text/javascript"> alert("Thanks For Posting a Review!") </script> ';
+    } else {
+        echo ' <script type="text/javascript"> alert("Review Not Posted!") </script> ';
+    }
+}
 
 
 ?>
