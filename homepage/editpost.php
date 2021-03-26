@@ -45,7 +45,42 @@ if (isset($_POST['foodInsert'])) {
         echo ' <script type="text/javascript"> alert("Review Not Posted!") </script> ';
     }
 }
+if (isset($_POST['bookInsert'])) {
+    //getting form input data
+    $book_name = $_POST['bookName'];
+    $book_category = $_POST['bookCategory'];
+    $booklocation = $_POST['bookLocation'];
+    $bookdetail_location = $_POST['bookDetailLocation'];
+    $bookdescription = $_POST['bookDescription'];
+    $bookprice = $_POST['bookPrice'];
+    $bookrating = $_POST['bookRating'];
+    $msg = "";
+    $bookimage = $_FILES['bookimage']['name'];
+    $booktarget = "review_img/" . basename($bookimage);
+    if ($_FILES['bookimage']['size'] == 0) {
 
+        $sql = "UPDATE `review` SET `rating` = '$bookrating', `price` = '$bookprice', `description`='$bookdescription', `location` = '$booklocation',`detail_location` = '$bookdetail_location' WHERE review_id = $tempid";
+    } else {
+        $sql = "UPDATE `review` SET `rating` = '$bookrating', `price` = '$bookprice', `description`='$bookdescription', `location` = '$booklocation',`detail_location` = '$bookdetail_location',`images`='$bookimage' WHERE review_id = $tempid";
+    }
+    mysqli_query($con, $sql);
+
+    $query2 = "UPDATE `book` SET `book_name` = '$book_name', `book_category` = '$book_category' WHERE review_id = $tempid ";
+    $query2_run = mysqli_query($con, $query2);
+    if ($_FILES['bookimage']['size'] == 0) {
+    } else {
+        if (move_uploaded_file($_FILES['bookimage']['tmp_name'], $booktarget)) {
+            $msg = "Image uploaded successfully";
+        } else {
+            $msg = "Failed to upload image";
+        }
+    }
+    if ($query2_run) {
+        echo ' <script type="text/javascript"> alert("Thanks For Posting a Review!") </script> ';
+    } else {
+        echo ' <script type="text/javascript"> alert("Review Not Posted!") </script> ';
+    }
+}
 
 ?>
 <!doctype html>
