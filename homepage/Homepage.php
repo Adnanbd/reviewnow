@@ -103,6 +103,18 @@ include 'C:\xampp\htdocs\reviewtest\path.php';
 	<div id="content">
 	
 									else
+											{
+												$res = mysqli_fetch_array($moviesql);
+												echo "<h2><b>".$res['movie_name']."</b></h2>";
+												echo "<p>"."<b>Rating: </b>".$row['rating']." out of 5"."</p>";
+															
+															
+															echo "<p>"."<b>Description: </b>".$row['description']."</p>";
+														  echo "</div>";
+												
+											}
+									}
+									else
 									{
 										$res = mysqli_fetch_array($foodsql);
 										echo "<h2><b>".$res['food_name']."</b></h2>";
