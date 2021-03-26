@@ -101,6 +101,27 @@ include 'C:\xampp\htdocs\reviewtest\path.php';
   
 <!-- youtube -->
 	<div id="content">
+	
+									else
+									{
+										$res = mysqli_fetch_array($foodsql);
+										echo "<h2><b>".$res['food_name']."</b></h2>";
+										
+										echo "<p>"."<b>Rating: </b>".$row['rating']." out of 5"."</p>";
+										echo "<p>"."<b>Price: </b>".$row['price']."<b> Taka</b>"."</p>";
+										echo "<p>"."<b>Location: </b>".$row['detail_location']."</p>";
+										echo "<p>"."<b>Description: </b>".$row['description']."</p>";
+										
+										
+										
+			
+										
+									  echo "</div>";
+									  
+									  
+									   
+									  
+									}
   
   	</div>
 		
