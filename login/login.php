@@ -2,8 +2,8 @@
 
 session_start();
 
-include 'C:\xampp\htdocs\reviewtest\db_connect.php';
-include 'C:\xampp\htdocs\reviewtest\path.php';
+include 'C:\xampp\htdocs\reviewnow\db_connect.php';
+include 'C:\xampp\htdocs\reviewnow\path.php';
 
 ob_start();
 					

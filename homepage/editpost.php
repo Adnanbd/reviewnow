@@ -1,7 +1,7 @@
 <?php
 session_start();
-include 'C:\xampp\htdocs\reviewtest\db_connect.php';
-include 'C:\xampp\htdocs\reviewtest\path.php';
+include 'C:\xampp\htdocs\reviewnow\db_connect.php';
+include 'C:\xampp\htdocs\reviewnow\path.php';
 $tempid = $_GET["id"];
 $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '" . $_SESSION["email"] . "' ");
 

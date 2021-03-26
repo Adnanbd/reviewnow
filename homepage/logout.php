@@ -1,7 +1,7 @@
 <?php
  session_start(); 
  session_destroy();
- include 'C:\xampp\htdocs\reviewbow\path.php';
+ include 'C:\xampp\htdocs\reviewnow\path.php';
 
 
 

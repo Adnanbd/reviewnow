@@ -1,7 +1,7 @@
 <?php
 session_start(); 
-include 'C:\xampp\htdocs\reviewtest\db_connect.php';
-include 'C:\xampp\htdocs\reviewtest\path.php';
+include 'C:\xampp\htdocs\reviewnow\db_connect.php';
+include 'C:\xampp\htdocs\reviewnow\path.php';
 
  $result = mysqli_query($con, "SELECT * FROM review ORDER BY review_id DESC");
  
