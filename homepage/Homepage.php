@@ -28,6 +28,66 @@ include 'C:\xampp\htdocs\reviewtest\path.php';
     
     <style>
 	
+	body{
+		background: #466368;
+  background: -webkit-linear-gradient(#648880, #293f50);
+  background:    -moz-linear-gradient(#648880, #293f50);
+  background:         linear-gradient(#648880, #293f50);
+
+		
+	}
+        
+       #content{
+		  
+   	width: 70%;
+   	margin: 100px auto;
+   	border: 1px solid #cbcbcb;
+	background-color:#fff;
+	border-radius:10px;
+   }
+   form div{
+   	margin-top: 5px;
+   }
+   #img_div{
+   	width: auto;
+   	padding: 5px;
+   	margin: 20px 20px 20px 20px;
+   	border: 1px solid #cbcbcb;
+	border-radius:10px;
+   }
+   #img_div:after{
+   	content: "";
+   	display: block;
+   	clear: both;
+   }
+   img{
+   	float: left;
+   	margin: 5px;
+   	width: 40%;
+   	height: auto;
+	padding: 30px;
+   }
+   
+   #reviewContent{
+	   float: right;
+   	margin: 5px;
+   	width: 50%;
+   	height: auto;
+	padding: 30px;
+	   
+   };
+   
+   
+  
+   
+  
+   .welcome{
+	   color: #fff;
+	   margin-top : 10px;
+	   margin-left:60px;
+	   
+   }
+	
    
 
   
