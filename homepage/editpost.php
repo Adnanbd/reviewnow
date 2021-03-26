@@ -265,7 +265,101 @@ if (isset($_POST['movieInsert'])) {
                 <center>
                     <h2 class="heading">Edit Your Post</h2>
                 </center>
-              else {
+               else {
+                        $res = mysqli_fetch_array($moviesql);
+                        $rsql = mysqli_query($con, "SELECT * FROM review where review_id =$tempid");
+                        $res2 = mysqli_fetch_array($rsql);
+                        $string =  '<div class="tab-pane" id="tab3">' .
+                            '                            <form action="" method="post" enctype="multipart/form-data">' .
+                            '                                <fieldset class="form-control formStyle">' .
+                            '                                    <div class="row">' .
+                            '                                        <div class="col-md-3">' .
+                            '                                            <label class="form-group" for="input"><strong>Movie Name</strong></label>' .
+                            '                                        </div>' .
+                            '                                        <div class="col-md-9">' .
+                            '                                            <input class="form-control" type="text" id="input" value="' . $res['movie_name'] . '" name="movieName" placeholder="Name of a Movie..." required>' .
+                            '                                        </div>' .
+                            '                                    </div>' .
+                            '                                    <div class="row">' .
+                            '                                        <div class="col-md-3">' .
+                            '                                            <label class="form-group" for="select"><strong>Movie Category</strong></label>' .
+                            '                                        </div>' .
+                            '                                        <div class="col-md-9">' .
+                            '                                            <select class="form-control" name="movieCategory" required>' .
+                            '                                                <option class="form-control"  value="' . $res['movie_category'] . '">' . $res['movie_category'] . '</option>' .
+                            '                                                <option value="Action">Action</option>' .
+                            '                                                <option value="Adventure">Adventure</option>' .
+                            '                                                <option value="Comedy">Comedy</option>' .
+                            '                                                <option value="Crime">Crime</option>' .
+                            '                                                <option value="Drama">Drama</option>' .
+                            '                                                <option value="Fantasy">Fantasy</option>' .
+                            '                                                <option value="Historical">Historical</option>' .
+                            '                                                <option value="Horror">Horror</option>' .
+                            '                                                <option value="Mystery">Mystery</option>' .
+                            '                                                <option value="Magical realism">Magical realism</option>' .
+                            '                                                <option value="Paranormal">Paranormal </option>' .
+                            '                                                <option value="Philosophical">Philosophical</option>' .
+                            '                                                <option value="Political">Political</option>' .
+                            '                                                <option value="Romance">Romance</option>' .
+                            '                                                <option value="Science fiction">Science fiction</option>' .
+                            '                                                <option value="Short story">Short story</option>' .
+                            '                                                <option value="Suspense">Suspense</option>' .
+                            '                                                <option value="Thriller">Thriller</option>' .
+                            '                                                <option value="Travel">Travel</option>' .
+                            '                                                <option value="Others">Others</option>' .
+                            '                                            </select>' .
+                            '                                        </div>' .
+                            '                                    </div>' .
+                            '                                    <div class="row">' .
+                            '                                        <div class="col-md-3">' .
+                            '                                            <label class="form-group" for="textarea"><strong>Review Description</strong></label>' .
+                            '                                        </div>' .
+                            '                                        <div class="col-md-9">' .
+                            '                                            <textarea class="form-control" id="textarea" rows="4" name="movieDescription" required>' . $res2['description'] . '</textarea>' .
+                            '                                        </div>' .
+                            '                                    </div>' .
+                            '                                    <div class="row">' .
+                            '                                        <div class="col-md-3">' .
+                            '                                            <div class="form-group">' .
+                            '                                                <label for="imagechoose"><strong>Select Images</strong></label>' .
+                            '                                            </div>' .
+                            '                                        </div>' .
+                            '                                        <div class="col-md-9">' .
+                            '                                            <div class="form-group">' .
+                            '                                                <input type="file" class="form-control" name="movieimage">' .
+                            '                                            </div>' .
+                            '                                        </div>' .
+                            '                                    </div>' .
+                            '                                    <div class="row">' .
+                            '                                        <div class="col-md-3">' .
+                            '                                            <label class="form-group" for="input"><strong>Rating</strong></label>' .
+                            '                                        </div>' .
+                            '                                        <div class="col-md-6">' .
+                            '                                            <select class="form-control" id="select" name="movieRating" required>' .
+                            '                                                <option value=' . $res2['rating'] . ' selected="selected" > ' . $res2['rating'] . '</option>' .
+                            '                                                <option value="1">1</option>' .
+                            '                                                <option value="2">2</option>' .
+                            '                                                <option value="3">3</option>' .
+                            '                                                <option value="4">4</option>' .
+                            '                                                <option value="5">5</option>' .
+                            '                                            </select>' .
+                            '                                        </div>' .
+                            '                                    </div>' .
+                            '                                    <hr>' .
+                            '                                    <div class="row">' .
+                            '                                        <div class="col-md-12">' .
+                            '                                            <button class="btn btn-outline-success btn-block" name="movieInsert" type="submit"><strong>Submit</strong></button>' .
+                            '                                        </div>' .
+                            '                                    </div>' .
+                            '                                </fieldset>' .
+                            '                            </form>' .
+                            '                        </div>' .
+                            '                    </div>';
+
+                        echo $string;
+                        echo "</div>";
+                    }
+                } else {
                     $res = mysqli_fetch_array($foodsql);
                     $rsql = mysqli_query($con, "SELECT * FROM review where review_id =$tempid");
                     $res2 = mysqli_fetch_array($rsql);
