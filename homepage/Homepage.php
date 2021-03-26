@@ -1,13 +1,5 @@
 <?php
-session_start(); 
-include 'C:\xampp\htdocs\reviewtest\db_connect.php';
-include 'C:\xampp\htdocs\reviewtest\path.php';
 
- $result = mysqli_query($con, "SELECT * FROM review ORDER BY review_id DESC");
- 
- $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESSION["email"]."' ");
- 
- $row_one = mysqli_fetch_array($user_email);
  
 
 ?>
@@ -28,65 +20,7 @@ include 'C:\xampp\htdocs\reviewtest\path.php';
     
     <style>
 	
-	body{
-		background: #466368;
-  background: -webkit-linear-gradient(#648880, #293f50);
-  background:    -moz-linear-gradient(#648880, #293f50);
-  background:         linear-gradient(#648880, #293f50);
-
-		
-	}
-        
-       #content{
-		  
-   	width: 70%;
-   	margin: 100px auto;
-   	border: 1px solid #cbcbcb;
-	background-color:#fff;
-	border-radius:10px;
-   }
-   form div{
-   	margin-top: 5px;
-   }
-   #img_div{
-   	width: auto;
-   	padding: 5px;
-   	margin: 20px 20px 20px 20px;
-   	border: 1px solid #cbcbcb;
-	border-radius:10px;
-   }
-   #img_div:after{
-   	content: "";
-   	display: block;
-   	clear: both;
-   }
-   img{
-   	float: left;
-   	margin: 5px;
-   	width: 40%;
-   	height: auto;
-	padding: 30px;
-   }
-   
-   #reviewContent{
-	   float: right;
-   	margin: 5px;
-   	width: 50%;
-   	height: auto;
-	padding: 30px;
-	   
-   };
-   
-   
-  
-   
-  
-   .welcome{
-	   color: #fff;
-	   margin-top : 10px;
-	   margin-left:60px;
-	   
-   }
+	
    
   
    
@@ -162,113 +96,7 @@ include 'C:\xampp\htdocs\reviewtest\path.php';
   
 <!-- youtube -->
 	<div id="content">
-  <?php
   
-   
-  
-	  
-	   while ($row = mysqli_fetch_array($result)) {
-		   
-		   
-	  
-	  echo "<div id='img_div'>";
-      	echo "<img src='review_img/".$row['images']."' >";
-		echo "<div id='reviewContent'>";
-		
-  
-    
-		 
-		 
-		 
-		 $foodsql = mysqli_query($con, "SELECT * FROM food where review_id ='".$row['review_id']."'");
-		 
-		    if(mysqli_num_rows($foodsql) < 1)
-									{
-										$moviesql = mysqli_query($con, "SELECT * FROM movie where review_id = '".$row['review_id']."' ");
-										
-										 if(mysqli_num_rows($moviesql) < 1)
-											{
-												$booksql = mysqli_query($con, "SELECT * FROM book where review_id = '".$row['review_id']."' ");
-												
-												if(mysqli_num_rows($booksql) < 1)
-														{
-															
-														}
-														else
-														{
-															$res = mysqli_fetch_array($booksql);
-															echo "<h2><b>".$res['book_name']."</b></h2>";
-															
-															echo "<p>"."<b>Rating: </b>".$row['rating']." out of 5"."</p>";
-															echo "<p>"."<b>Price: </b>".$row['price']."<b> Taka</b>"."</p>";
-															echo "<p>"."<b>Location: </b>".$row['detail_location']."</p>";
-															echo "<p>"."<b>Description: </b>".$row['description']."</p>";
-														  echo "</div>";
-															
-														}
-												
-												
-												
-											}
-											else
-											{
-												$res = mysqli_fetch_array($moviesql);
-												echo "<h2><b>".$res['movie_name']."</b></h2>";
-												echo "<p>"."<b>Rating: </b>".$row['rating']." out of 5"."</p>";
-															
-															
-															echo "<p>"."<b>Description: </b>".$row['description']."</p>";
-														  echo "</div>";
-												
-											}
-									}
-									else
-									{
-										$res = mysqli_fetch_array($foodsql);
-										echo "<h2><b>".$res['food_name']."</b></h2>";
-										
-										echo "<p>"."<b>Rating: </b>".$row['rating']." out of 5"."</p>";
-										echo "<p>"."<b>Price: </b>".$row['price']."<b> Taka</b>"."</p>";
-										echo "<p>"."<b>Location: </b>".$row['detail_location']."</p>";
-										echo "<p>"."<b>Description: </b>".$row['description']."</p>";
-										
-										
-										
-			
-										
-									  echo "</div>";
-									  
-									  
-									   
-									  
-									}
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-      
-      	echo "</div>";
-		
-    }
-	
-  
-
-
- 
-  
-	
-	
-	
-	
-	
-	
-		
-  ?>
   	</div>
 		
 
