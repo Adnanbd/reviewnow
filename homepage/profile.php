@@ -265,8 +265,8 @@ $row_one = mysqli_fetch_array($user_email);
 		echo "<img src='review_img/".$row['images']."' >";
 	  echo "<div id='reviewContent'>";
 	  $temp1 = $row['review_id'];
-		echo "<a href = 'http://localhost:8080/reviewtest/homepage/profile.php?id=$temp1'> <button class='btn'><i class='fa fa-trash'></i> Delete Post</button></a>";
-		echo "<a href = 'http://localhost:8080/reviewtest/homepage/editpost.php?id=$temp1'> <button class='btn'><i class='fa fa-trash'></i> Edit Post</button></a>";
+		echo "<a href = 'http://localhost:8080/reviewnow/homepage/profile.php?id=$temp1'> <button class='btn'><i class='fa fa-trash'></i> Delete Post</button></a>";
+		echo "<a href = 'http://localhost:8080/reviewnow/homepage/editpost.php?id=$temp1'> <button class='btn'><i class='fa fa-trash'></i> Edit Post</button></a>";
 		
   
   
