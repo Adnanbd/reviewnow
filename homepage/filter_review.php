@@ -143,3 +143,57 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
   
   
   <body>
+   <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light navbar-dark bg-dark ">
+		   
+		   
+              
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+			  
+	
+                          
+                       
+             
+			  
+				
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  
+			  
+               
+                <ul class="navbar-nav mx-auto">
+				
+				
+                 
+                  <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo $home_path; ?>">HOME</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $create_post_path; ?>">Post a Review</a>
+                  </li>
+				   <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $filter_path; ?>">Browse Reviews</a>
+                  </li>
+                  
+				  
+				  
+				 
+                </ul>
+				 <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $profile_path; ?>"><?php echo "<strong>Welcome, ".$row_one["first_name"]." ".$row_one["last_name"]."</strong>"; ?></a>
+                  </li>
+                  
+   
+				  
+				  <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $logout_path; ?>">Log Out</a>
+                  </li>
+        </ul>
+				
+				
+	
+              </div>
+            </nav>
