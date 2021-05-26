@@ -406,4 +406,84 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
                  
 
                 </fieldset>
+<div id="content">
+  <?php
+  
+  
+  
+
+
+
+ 
+  
+	
+	
+	
+	
+	
+	
+	if( isset($_POST['feedSearch']) )
+	{
+		
+		
+		
+		$food_category = $_POST['foodCategory'];
+		$location = $_POST['foodLocation'];
+		$myrating = $_POST['foodRating'];
+		
+		if($food_category && $location)
+			
+			{
+				
+					
+				 
+				 if($myrating == 0)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN food f ON (r.review_id = f.review_id) WHERE (r.location = '$location' AND f.food_category = '$food_category') ORDER BY r.rating ASC");
+			}
+		   else if($myrating == 1)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN food f ON (r.review_id = f.review_id) WHERE (r.location = '$location' AND f.food_category = '$food_category') ORDER BY r.rating DESC");		
+			}
+				
+			}
+		else if($food_category)
+		{
+			if($myrating == 0)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN food f ON (r.review_id = f.review_id) WHERE (f.food_category = '$food_category') ORDER BY r.rating ASC");
+			}
+		   else if($myrating == 1)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN food f ON (r.review_id = f.review_id) WHERE (f.food_category = '$food_category') ORDER BY r.rating DESC");		
+			}
+			
+			
+		}
+		else if($location)
+		{
+			if($myrating == 0)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN food f ON (r.review_id = f.review_id) WHERE (r.location = '$location') ORDER BY r.rating ASC");
+			}
+		   else if($myrating == 1)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN food f ON (r.review_id = f.review_id) WHERE (r.location = '$location') ORDER BY r.rating DESC");		
+			}
+		}
+				
+		
+		
+		
+		while ($rows = mysqli_fetch_array($result)) {
+        echo "<div id='img_div'>";
+      	echo "<img src='review_img/".$rows['images']."' >";
+      	echo "<h2><b>".$rows['food_name']."</b></h2>";
+		echo "<p>"."<b>Rating: </b>".$rows['rating']." out of 5"."</p>";
+		echo "<p>"."<b>Price: </b>".$rows['price']."<b> Taka</b>"."</p>";
+		echo "<p>"."<b>Location: </b>".$rows['detail_location']."</p>";
+		echo "<p>"."<b>Description: </b>".$rows['description']."</p>";
+      echo "</div>";
+													}
+	}
                 
