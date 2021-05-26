@@ -28,3 +28,118 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
     <title>Review IT</title>
     
     <style>
+		body{
+		background: #466368;
+  background: -webkit-linear-gradient(#648880, #293f50);
+  background:    -moz-linear-gradient(#648880, #293f50);
+  background:         linear-gradient(#648880, #293f50);
+
+		
+	}
+        
+    .conbac {
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 80px auto;
+        }
+        .conbac1 {
+            background-color: #fff;
+            height: 50px;
+            border-radius: 10px;
+        }
+        .formStyle {
+            background-color: #FFFFFF;
+            border: 3px solid #FFD04B;
+            border-radius: 5px;
+        }
+        .heading {
+            padding-top: 20px;
+            padding-bottom: 30px;
+            border: 5px solid #FFD04B;
+            border-radius: 5px;
+        }
+        .tabStyle,
+        .tabStyle:focus,
+        .tabStyle:active,
+        .tabStyle:visited {
+            border: 3px solid;
+            margin: 5px;
+            padding: 30px;
+            background-color: linear-gradient(135deg, rgb(195, 39, 2) 0%, rgb(224, 164, 60) 100%);
+            margin-left: 185px;
+            border-radius: 15px;
+            border-color: #fff;
+            text-decoration: none;
+        }
+        .tabStyle:hover,
+        .tabStyle a:hover {
+            background-color: #AE331F;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+        .tabStyle a {
+            color: #000000;
+            text-decoration: none;
+        }
+        .tabStyle a:hover {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        .welcome {
+            color: #fff;
+            margin-top: 10px;
+            margin-left: 60px;
+        }
+		
+		#content{
+		  
+   	width: 70%;
+   	margin: 100px auto;
+   	border: 1px solid #cbcbcb;
+	background-color:#fff;
+	border-radius:10px;
+   }
+   form div{
+   	margin-top: 5px;
+   }
+   #img_div{
+   	width: auto;
+   	padding: 5px;
+   	margin: 20px 20px 20px 20px;
+   	border: 1px solid #cbcbcb;
+	border-radius:10px;
+   }
+   #img_div:after{
+   	content: "";
+   	display: block;
+   	clear: both;
+   }
+   img{
+   	float: left;
+   	margin: 5px;
+   	width: 40%;
+   	height: auto;
+	padding: 30px;
+   }
+   
+   #reviewContent{
+	   float: right;
+   	margin: 5px;
+   	width: 50%;
+   	height: auto;
+	padding: 30px;
+	   
+   };
+   }
+   
+  
+   
+
+  
+ 
+    </style>
+    
+  </head>
+  
+  
+  <body>
