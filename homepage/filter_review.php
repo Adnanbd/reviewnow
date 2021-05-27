@@ -406,6 +406,30 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
                  
 
                 </fieldset>
+			</form>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        
+						
+						
+						<form action="" method="post" enctype="multipart/form-data">
+                
+                <fieldset class="form-control formStyle" >
+
+                    
+                    
+                     <div class="row">
+                         <div class="col-md-3">
+                             
+                             <label class="form-group" for="select"><strong>Select Category</strong></label>
+                             
+                         </div>
+                         
+                         <div class="col-md-9">
+                             
+                             <select class="form-control" name="bookCategory" required>
+                                <option class="form-control" value="">Choose Category</option>
+					
 <div id="content">
   <?php
   
