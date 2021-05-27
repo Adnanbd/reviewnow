@@ -935,4 +935,16 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
 			}
 			
 		}
+		while ($rows = mysqli_fetch_array($result)) {
+        echo "<div id='img_div'>";
+      	echo "<img src='review_img/".$rows['images']."' >";
+      	echo "<h2><b>".$rows['movie_name']."</b></h2>";
+		echo "<p>"."<b>Rating: </b>".$rows['rating']." out of 5"."</p>";
+		echo "<p>"."<b>Description: </b>".$rows['description']."</p>";
+      echo "</div>";
+													}
+	}
+		
+  ?>
+  	</div>	
                 
