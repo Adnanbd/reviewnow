@@ -429,7 +429,61 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
                              
                              <select class="form-control" name="bookCategory" required>
                                 <option class="form-control" value="">Choose Category</option>
-					
+					<option class="form-control" value="">Choose Category</option>
+                                                <option value="Action and adventure">Action and adventure</option>
+                                                <option value="Childrens">Children's</option>
+                                                <option value="Comic">Comic</option>
+                                                <option value="Crime">Crime</option>
+                                                <option value="Drama">Drama</option>
+                                                <option value="Fairytale">Fairytale</option>
+                                                <option value="Fantasy">Fantasy</option>
+                                                <option value="Historical">Historical</option>
+                                                <option value="Horror">Horror</option>
+                                                <option value="Islamic">Islamic</option>
+                                                <option value="Mystery">Mystery</option>
+                                                <option value="Paranormal">Paranormal </option>
+                                                <option value="Poetry">Poetry</option>
+                                                <option value="Romance">Romance</option>
+                                                <option value="Science fiction">Science fiction</option>
+                                                <option value="Short story">Short story</option>
+                                                <option value="Suspense">Suspense</option>
+                                                <option value="Thriller">Thriller</option>
+                                                <option value="Travel">Travel</option>
+                                                <option value="Others">Others</option>
+                                 
+								 
+                                 
+                                 
+                                  
+                                 
+                                  
+                                  
+								
+                                 
+                                  
+                              </select>
+                             
+                         </div>
+                      
+                    </div>
+                    
+                    
+                    <div class="row">
+                         <div class="col-md-3">
+                             
+                             <label class="form-group" for="select"><strong>Select Location</strong></label>
+                             
+                         </div>
+                         
+                         <div class="col-md-3">
+                             
+                             <select class="form-control" id="select" name="bookLocation" >
+                                <option class="form-control" value="">Select Area</option>
+
+                                <optgroup label="Dhaka">
+                                  
+                                
+                                 
 <div id="content">
   <?php
   
