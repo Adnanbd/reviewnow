@@ -609,6 +609,65 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
                  
 
                 </fieldset>
+				
+		         </form>
+						
+						
+						
+						
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        
+						
+						<form action="" method="post" enctype="multipart/form-data">
+                
+                <fieldset class="form-control formStyle" >
+
+                    
+                    
+                     <div class="row">
+                         <div class="col-md-3">
+                             
+                             <label class="form-group" for="select"><strong>Select Category</strong></label>
+                             
+                         </div>
+                         
+                         <div class="col-md-9">
+                             
+                             <select class="form-control" name="movieCategory" required>
+                               
+								 <option class="form-control" value="">Choose Category</option>
+                                                <option value="Action">Action</option>
+                                                <option value="Adventure">Adventure</option>
+                                                <option value="Comedy">Comedy</option>
+                                                <option value="Crime">Crime</option>
+                                                <option value="Drama">Drama</option>
+                                                <option value="Fantasy">Fantasy</option>
+                                                <option value="Historical">Historical</option>
+                                                <option value="Horror">Horror</option>
+                                                <option value="Mystery">Mystery</option>
+                                                <option value="Magical realism">Magical realism</option>
+                                                <option value="Paranormal">Paranormal </option>
+                                                <option value="Philosophical">Philosophical</option>
+                                                <option value="Political">Political</option>
+                                                <option value="Romance">Romance</option>
+                                                <option value="Science fiction">Science fiction</option>
+                                                <option value="Short story">Short story</option>
+                                                <option value="Suspense">Suspense</option>
+                                                <option value="Thriller">Thriller</option>
+                                                <option value="Travel">Travel</option>
+                                                <option value="Others">Others</option>
+                                 
+								 
+                                 
+                                 
+                                  
+                                 
+                                  
+                                  
+								
+                                 
+                                  
 <div id="content">
   <?php
   
