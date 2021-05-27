@@ -667,7 +667,7 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
                                   
 								
                                  
-                                  </select>
+                                  
 <div id="content">
   <?php
   
