@@ -661,7 +661,32 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
 								 
                                  
                                  
-                                  
+             </select>
+                             
+                         </div>
+                      
+                    </div>
+                    
+                    
+                    <div class="row">
+					
+					     <div class="col-md-3">
+                             
+                             <label class="form-group" for="input"><strong>Rating</strong></label>
+                             
+                         </div>
+						     <div class="col-md-3">
+                             
+                             <select class="form-control" id="select" name="movieRating" required>
+                                 
+                                 <option value="0">Ascending</option>
+                                  <option value="1">Descending</option>
+                                 
+                             
+                             </select>
+                             
+                         </div>
+                         
                                  
                                   
                                   
