@@ -716,4 +716,35 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
 			}
 			
 			}
+			else if($book_category)
+		{
+			
+		    
+			if($myrating == 0)
+			{
+
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_id = f.review_id) WHERE (f.book_category = '$book_category') ORDER BY r.rating ASC");
+			}
+		   else if($myrating == 1)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_id = f.review_id) WHERE (f.book_category = '$book_category') ORDER BY r.rating DESC");		
+			}
+		
+		}
+		else if($location)
+		{
+		
+		
+			if($myrating == 0)
+			{
+
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_id = f.review_id) WHERE (r.location = '$location') ORDER BY r.rating ASC");
+			}
+		   else if($myrating == 1)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_id = f.review_id) WHERE (r.location = '$location') ORDER BY r.rating DESC");		
+			}
+		}
+				
+		
                 
