@@ -911,4 +911,28 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
       echo "</div>";
 													}
 	}
+	if( isset($_POST['movieSearch']) )
+	{
+		
+		
+		
+		$movie_category = $_POST['movieCategory'];
+		
+		$myrating = $_POST['bookRating'];
+		
+		
+		if($movie_category)
+		{
+			
+			if($myrating == 0)
+			{
+
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN movie f ON (r.review_id = f.review_id) WHERE (f.movie_category = '$movie_category') ORDER BY r.rating ASC");
+			}
+		   else if($myrating == 1)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN movie f ON (r.review_id = f.review_id) WHERE (f.movie_category = '$movie_category') ORDER BY r.rating DESC");		
+			}
+			
+		}
                 
