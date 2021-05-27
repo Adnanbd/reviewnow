@@ -689,4 +689,31 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
       echo "</div>";
 													}
 	}
+	if( isset($_POST['bookSearch']) )
+	{
+		
+		
+		
+		$book_category = $_POST['bookCategory'];
+		$location = $_POST['bookLocation'];
+		$myrating = $_POST['bookRating'];
+		
+		if($book_category && $location)
+			
+			{
+				$result = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_id = f.review_id) WHERE (r.location = '$location' AND f.book_category = '$book_category') ORDER BY r.review_id DESC");
+			
+			
+			
+			if($myrating == 0)
+			{
+
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_id = f.review_id) WHERE (r.location = '$location' AND f.book_category = '$book_category') ORDER BY r.rating ASC");
+			}
+		   else if($myrating == 1)
+			{
+			$result = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_id = f.review_id) WHERE (r.location = '$location' AND f.book_category = '$book_category') ORDER BY r.rating DESC");		
+			}
+			
+			}
                 
