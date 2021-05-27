@@ -686,6 +686,76 @@ $user_email = mysqli_query($con, "SELECT * FROM users where email_id = '".$_SESS
                              </select>
                              
                          </div>
+		 <div class="col-md-2">
+						 
+						 <form method="post" class="form-inline my-2 my-lg-0"  >
+                  
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="movieSearch">Filter</button>
+                        </form>
+                           </div>
+                       
+                      
+                    </div>
+					
+					
+                
+                    
+                    
+                
+                    
+            
+                    
+                  
+                    
+                  
+                    
+                 
+
+                </fieldset>
+                
+            </form>
+						
+						
+						
+						
+                    </div>
+                </div>
+                <div class="tab-control">
+                    <a class="previous-button" role="button"><i class="fa fa-angle-left fa-3x fa-fw"></i></a>
+                    <a class="next-button" role="button"><i class="fa fa-angle-right fa-3x fa-fw"></i></a>
+                </div>
+            </div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+                
+                
+                
+            
+			
+			
+           
+
+
+
+                
+            
+                
+                
+            </div>
+            <div class="col-md-2"></div>
+             
+        </div>
+        
+        
+        
+    </div>	
                          
                                  
                                   
