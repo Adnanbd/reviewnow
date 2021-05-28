@@ -169,7 +169,7 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
 	 <?php
   
    
-  
+     if(!(isset($_POST['feedSearch']))){
 	  
 	   while ($row = mysqli_fetch_array($result)) {
 		   
@@ -244,7 +244,7 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
 	echo "</div>";
 		
     }
-	
+	 }
   
 
 if( isset($_POST['feedSearch'])){
