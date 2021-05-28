@@ -247,6 +247,26 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
 	
   
 
+if( isset($_POST['feedSearch'])){
+		
+		$key = $_POST['key'];
+		
+		$result = mysqli_query($con, "SELECT * FROM review r JOIN food f ON (r.review_id = f.review_id) WHERE f.food_name like '%$key%' ORDER BY r.review_id DESC");
+		
+		
+		if($result){
+		
+		while ($rows = mysqli_fetch_array($result)) {
+        echo "<div id='img_div'>";
+      	echo "<img src='review_img/".$rows['images']."' >";
+      	echo "<h2><b>".$rows['food_name']."</b></h2>";
+		echo "<p>"."<b>Rating: </b>".$rows['rating']." out of 5"."</p>";
+		echo "<p>"."<b>Price: </b>".$rows['price']."<b> Taka</b>"."</p>";
+		echo "<p>"."<b>Location: </b>".$rows['detail_location']."</p>";
+		echo "<p>"."<b>Description: </b>".$rows['description']."</p>";
+      echo "</div>";
+		}
+		}
 
  
   
