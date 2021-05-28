@@ -151,7 +151,12 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
 				
 				
 	
+             
               </div>
+			  <form method="post" class="form-inline my-2 my-lg-0"  >
+                  <input class="form-control mr-sm-2" type="text" id="input" placeholder="Search" name="key" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="feedSearch">Search</button>
+                </form>
             </nav>
 
    <!-- navbar ends -->
