@@ -199,7 +199,19 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
 				else
 				{
 					//echo "<p>No like Data found</p>";
-				} 
+				}
+				$temp2="select cdislike from like_dislike where user_email = '$email' and post_id = $TID";
+                $temp2Like = mysqli_query($con,$temp2);
+				if ($temp2Like && mysqli_num_rows($temp2Like)) {
+				$temp2LikeX = mysqli_fetch_assoc($temp2Like);
+				if($temp2LikeX['cdislike'] == 1){
+					$btnColor1 = "btn-danger";
+				}
+				else{
+					$btnColor1 = "btn-default";
+				}
+				}
+		   // like_dislike Work End =================				
 		   
 	  
 	  echo "<div id='img_div'>";
