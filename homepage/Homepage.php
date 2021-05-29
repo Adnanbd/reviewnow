@@ -172,7 +172,34 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
      if(!(isset($_POST['feedSearch']))){
 	  
 	   while ($row = mysqli_fetch_array($result)) {
-		   
+		  // like_dislike Work Start =================
+		   $TID = $row['review_id'];
+		   $btnColor = "btn-default";
+		   $btnColor1 = "btn-default";
+				
+			   $temp= "select clike from like_dislike where user_email = '$email' and post_id = $TID";
+				
+               $tempLike = mysqli_query($con,$temp);
+			   
+			  
+				if ($tempLike && mysqli_num_rows($tempLike)) {
+				
+				
+					
+                           
+				$tempLikeX = mysqli_fetch_assoc($tempLike);
+				if($tempLikeX['clike'] == 1){
+					$btnColor = "btn-success";
+				}
+				else{
+					$btnColor = "btn-default";
+				}
+				
+				}
+				else
+				{
+					//echo "<p>No like Data found</p>";
+				} 
 		   
 	  
 	  echo "<div id='img_div'>";
