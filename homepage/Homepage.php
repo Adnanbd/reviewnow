@@ -288,6 +288,9 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
 				</div>
 				<div class="col-sm-2">
 					<a href="javascript:void(0)" class="btn <?php echo $btnColor1?> btn-lg" id = "dislikeBtn_<?php echo $row['review_id']?>">
+					<span class="glyphicon glyphicon-thumbs-down" onclick="dislike_update('<?php echo $row['review_id']?>',0)"> Dislike (<span id="dislike_loop_<?php echo $row['review_id']?>"><?php echo $row['dislike_count']?></span>)</span>
+					</a>
+				</div>
 		<?php
 	echo "</div>";
 		
