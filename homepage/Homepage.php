@@ -286,6 +286,8 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
 						<span class="glyphicon glyphicon-thumbs-up" onclick="like_update('<?php echo $row['review_id']?>',0)"> Like (<span id="like_loop_<?php echo $row['review_id']?>"><?php echo $row['like_count']?></span>)</span>
 					</a>
 				</div>
+				<div class="col-sm-2">
+					<a href="javascript:void(0)" class="btn <?php echo $btnColor1?> btn-lg" id = "dislikeBtn_<?php echo $row['review_id']?>">
 		<?php
 	echo "</div>";
 		
