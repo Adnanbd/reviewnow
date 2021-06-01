@@ -428,6 +428,11 @@ $result1 = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_i
 				}
 			});}
 		}	
+
+
+		function dislike_update(id,check){
+			
+			var className = $('#dislikeBtn_'+id).attr('class');
 	
 
       
