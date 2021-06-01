@@ -369,6 +369,24 @@ $result1 = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_i
   	</div>
 		
 
+	<script>
+		function like_update(id,check){
+			
+			
+			var className = $('#likeBtn_'+id).attr('class');
+			if(check == 1){
+				if(className == "btn btn-success btn-lg"){
+				$('#likeBtn_'+id).attr('class', "btn btn-default btn-lg" );}
+				
+			}
+			else if(className == "btn btn-success btn-lg"){
+				$('#likeBtn_'+id).attr('class', "btn btn-default btn-lg" );
+				
+			}
+			else{
+				$('#likeBtn_'+id).attr('class', "btn btn-success btn-lg" );
+				dislike_update(id,1);
+			}
 
 
       
