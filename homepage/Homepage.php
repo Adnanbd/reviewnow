@@ -9,6 +9,8 @@ include 'C:\xampp\htdocs\reviewnow\path.php';
  
  $row_one = mysqli_fetch_array($user_email);
  
+ $email = $row_one["email_id"];
+ 
 
 ?>
 
