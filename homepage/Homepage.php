@@ -387,6 +387,24 @@ $result1 = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_i
 				$('#likeBtn_'+id).attr('class', "btn btn-success btn-lg" );
 				dislike_update(id,1);
 			}
+			
+			if(check == 1){
+				if(className == "btn btn-success btn-lg"){
+				jQuery.ajax({
+				url:'update_count.php',
+				type:'post',
+				data:'type=like&id='+id,
+				success:function(result){
+					var cur_count=jQuery('#like_loop_'+id).html();
+					
+				
+				cur_count--;
+					jQuery('#like_loop_'+id).html(cur_count);
+			}
+			
+				}
+				);}
+			}
 
 
       
