@@ -448,6 +448,23 @@ $result1 = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_i
 				like_update(id,1);
 			}
 			
+			if(check == 1){
+				if(className == "btn btn-danger btn-lg"){
+				jQuery.ajax({
+				url:'update_count.php',
+				type:'post',
+				data:'type=dislike&id='+id,
+				success:function(result){
+					var cur_count=jQuery('#dislike_loop_'+id).html();
+					
+				
+				cur_count--;
+					jQuery('#dislike_loop_'+id).html(cur_count);
+			}
+			
+				}
+				);}
+			}
 
       
     
