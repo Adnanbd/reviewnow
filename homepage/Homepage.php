@@ -405,7 +405,30 @@ $result1 = mysqli_query($con, "SELECT * FROM review r JOIN book f ON (r.review_i
 				}
 				);}
 			}
-
+			else{
+			jQuery.ajax({
+				url:'update_count.php',
+				type:'post',
+				data:'type=like&id='+id,
+				success:function(result){
+					var cur_count=jQuery('#like_loop_'+id).html();
+					var className = $('#likeBtn_'+id).attr('class');
+					if(className == "btn btn-success btn-lg"){
+				
+				cur_count++;
+					jQuery('#like_loop_'+id).html(cur_count);
+			}
+			else{
+				
+				cur_count--;
+					jQuery('#like_loop_'+id).html(cur_count);
+			}
+					
+			
+				}
+			});}
+		}	
+	
 
       
     
