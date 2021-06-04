@@ -249,10 +249,10 @@ $row_one = mysqli_fetch_array($user_email);
   echo "<img src='images/user.jpg'>";
   echo "<div id='proinfo'>";
   ?>
-  echo "<h2><strong>".$row_one["first_name"]." ".$row_one["last_name"]."</strong></h2>";
-  echo "<p>"."<b>Address: </b>".$row_one["address"]."</p>";
-  echo "<p>"."<b>Date-of-Birth: </b>".$row_one["date_of_birth"]."</p>";
-  echo "<p>"."<b>Phone: </b>".$row_one["phone_no"]."</p>";
+  <h2 id = "fullName"><strong></strong></h2>
+  <p id = "address"><b></b></p>
+  <p id = "dob"><b></b></p>
+  <p id = "phoneno"><b></b></p>
   <?php
   echo "</div>";
   echo "</div>";
