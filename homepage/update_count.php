@@ -6,5 +6,13 @@ $id=$_POST['id'];
 $email = $_SESSION["email"];
 $xyz = "select * from like_dislike where user_email = '$email' and post_id = $id";
 $xyz_res=mysqli_query($con,$xyz);
+if($xyz_res && mysqli_num_rows($xyz_res)){
+	
+}
+else{
+	$create_field = "INSERT INTO like_dislike (user_email, post_id, clike, cdislike) VALUES ('$email', $id, 0, 0)";
+	$create_field_run=mysqli_query($con,$create_field);
+}
+
 
 ?>
