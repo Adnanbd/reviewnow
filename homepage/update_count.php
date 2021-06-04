@@ -27,6 +27,20 @@ if($type=='like'){
 					$sql2="update like_dislike set clike=1 where user_email = '$email' and post_id = $id";
 				}
 	
-
+}else{
+	$temp="select cdislike from like_dislike where user_email = '$email' and post_id = $id";
+                $tempLike = mysqli_query($con,$temp);
+				$tempLikeX = mysqli_fetch_assoc($tempLike);
+				if($tempLikeX['cdislike'] == 1){
+					$sql="update review set dislike_count=dislike_count-1 where review_id=$id";
+					$sql2="update like_dislike set cdislike=0 where user_email = '$email' and post_id = $id";
+				}
+				else{
+					$sql="update review set dislike_count=dislike_count+1 where review_id=$id";
+					$sql2="update like_dislike set cdislike=1 where user_email = '$email' and post_id = $id";
+				}
+}
+$res=mysqli_query($con,$sql);
+$res2=mysqli_query($con,$sql2);
 
 ?>
