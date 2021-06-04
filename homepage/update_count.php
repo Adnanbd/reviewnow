@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-include 'C:\xampp\htdocs\reviewtest\db_connect.php';
+include 'C:\xampp\htdocs\reviewnow\db_connect.php';
 $type=$_POST['type'];
 $id=$_POST['id'];
 $email = $_SESSION["email"];

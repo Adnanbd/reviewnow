@@ -1,7 +1,7 @@
 <?php
 
 $email = $_GET['email'];
-include 'C:\xampp\htdocs\reviewtest\db_connect.php';
+include 'C:\xampp\htdocs\reviewnow\db_connect.php';
 
 error_reporting(0);
 
